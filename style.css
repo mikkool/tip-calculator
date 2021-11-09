@@ -1,0 +1,98 @@
+@import url('variables.css');
+@import url('global.css');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+body {
+  background: var(--lighter-grayish-cyan);
+  max-width: 1440px;
+  
+}
+img {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calculator {
+  width: 675px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.calc-box {
+  background-color: var(--white);
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px var(--light-grayish-cyan);
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.btn-tip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 0.5rem 0rem;
+}
+
+.calc {
+  display: grid;
+}
+
+.calculated {
+  background-color: var(--very-dark-cyan);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: var(--white);
+  display: grid;
+  gap: 5rem;
+}
+
+.bill-info p {
+  color: var(--darker-grayish-cyan);
+  font-weight: 400;
+}
+
+.tip-total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.tip-amount {
+  display: grid;
+  font-size: var(--normal-text);
+  color: var(--strong-cyan);
+  gap: 0.7rem;
+}
+
+.tip-text {
+  
+  font-size: var(--small-text);
+  color: var(--white);
+}
+
+.tip-text p {
+  font-size: var(--smallest-text);
+  margin: 0;
+  padding: 0;
+  color: var(--strong-cyan);
+}
+
+.btn-reset {
+  background-color: var(--strong-cyan);
+  width: 100%;
+  color: var(--very-dark-cyan);
+  font-weight: 400;
+}
+
+.custom {
+  background-color: var(--light-grayish-cyan);
+  color: var(--darker-grayish-cyan);
+}
