@@ -61,10 +61,8 @@ textBill.addEventListener("keypress", (e) => {
 })
 
 textCustom.addEventListener("blur", () =>{
-  
   textCustom.style.display = "none";
   buttonCustom.style.display = "block";
-  
 })
 
 textCustom.addEventListener("keypress", (e) =>{
@@ -72,10 +70,14 @@ textCustom.addEventListener("keypress", (e) =>{
   console.log(customTip);
   if(e.code === "Enter"){
     if(customTip > 0) {
-        totalBill = textBill.value * customTip;
-        totalPeople = (textBill.value * customTip) / textPeople.value
-        textCustom.value = "";
-      }
+      totalBill = textBill.value * customTip;
+      totalPeople = (textBill.value * customTip) / textPeople.value
+    }
+    labelTip.innerHTML = usdFormat.format(totalBill);
+    labelPerson.innerHTML = usdFormat.format(totalPeople)
+    textCustom.value = "";
+    textCustom.style.display = "none";
+    buttonCustom.style.display = "block";
   }
 })
 
