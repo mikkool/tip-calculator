@@ -14,16 +14,6 @@ let totalPeople = 0;
 
 window.onload = textBill.focus();
 
-function calculateTip(){
-  //let totalTip = 0;
-  if(tipPercent === 5){
-    totalTip = (textBill.value * 0.05) / textPeople.value;
-    console.log(totalTip);
-  }
-  console.log(totalTip);
-  return totalTip
-}
-
 tipButtons.forEach((tipButton) => {
   tipButton.addEventListener("click", () => {
     if (textBill.value == "") {
@@ -70,9 +60,17 @@ textBill.addEventListener("keypress", (e) => {
   }
 })
 
-textCustom.addEventListener("blur", () =>{
+textCustom.addEventListener("blur", (e) =>{
+  let customTip = textCustom.value / 100
   textCustom.style.display = "none";
   buttonCustom.style.display = "block";
+  console.log(customTip);
+  
+  if(customTip > 0) {
+    totalBill = textBill.value * customTip;
+    totalPeople = (textBill.value * customTip) / textPeople.value
+    textCustom.value = "";
+  }
 })
 
 textBill.addEventListener("blur", () =>{
