@@ -5,11 +5,14 @@ const labelTip = document.querySelector(".lbl-tip");
 const labelPerson = document.querySelector(".tip-person");
 const buttonReset = document.querySelector(".btn-reset");
 const textCustom = document.querySelector(".txt-custom")
-const buttonCustom = document.querySelector(".custom")
+const buttonCustom = document.querySelector(".custom");
+const errorBill = document.querySelector(".error-bill");
+const errorPeople = document.querySelector(".error-people");
 
 let totalBill = 0;
 let totalPeople = 0;
 
+window.onload = textBill.focus();
 
 function calculateTip(){
   //let totalTip = 0;
@@ -25,9 +28,10 @@ tipButtons.forEach((tipButton) => {
   tipButton.addEventListener("click", () => {
     if (textBill.value == "") {
       textBill.focus();
+      errorBill.innerHTML = "Can't be zero";
     }else if (textPeople.value == ""){
       textPeople.focus();
-      
+      errorPeople.innerHTML = "Can't be zero";
     }else{
       let tipValue = tipButton.value / 100;
       let totalTip = (textBill.value * tipValue);
@@ -63,5 +67,22 @@ textBill.addEventListener("keypress", (e) => {
   if(e.which == 'Tab' || e.code == 'Tab' || e.code == 'Enter') {
     textPeople.focus();
     console.log(e.code);
+  }
+})
+
+textCustom.addEventListener("blur", () =>{
+  textCustom.style.display = "none";
+  buttonCustom.style.display = "block";
+})
+
+textBill.addEventListener("blur", () =>{
+  if(textBill.value > 0){
+    errorBill.innerHTML = ""
+  }
+})
+
+textPeople.addEventListener("blur", () =>{
+  if(textPeople.value > 0){
+    errorPeople.innerHTML = ""
   }
 })

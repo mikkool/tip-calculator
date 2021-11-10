@@ -111,13 +111,13 @@ img {
 
 .dollar-icon {
   position: absolute;
-  top: 90px;
+  top: 91px;
   left: 50px
 }
 
 .person-icon {
   position: absolute;
-  top: 290px;
+  top: 308px;
   left: 50px;
 }
 
@@ -130,7 +130,17 @@ img {
   display: none;
 }
 
-.txt-custom:focus {
+.txt-custom:focus, .txt-people:focus {
   outline: none !important;
   border: 1px solid var(--strong-cyan);
+}
+
+.text-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.text-grid .error-bill, .text-grid .error-people {
+  text-align: right;
+  color: var(--error-text);
 }
