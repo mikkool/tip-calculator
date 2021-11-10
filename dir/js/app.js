@@ -60,16 +60,22 @@ textBill.addEventListener("keypress", (e) => {
   }
 })
 
-textCustom.addEventListener("blur", (e) =>{
-  let customTip = textCustom.value / 100
+textCustom.addEventListener("blur", () =>{
+  
   textCustom.style.display = "none";
   buttonCustom.style.display = "block";
-  console.log(customTip);
   
-  if(customTip > 0) {
-    totalBill = textBill.value * customTip;
-    totalPeople = (textBill.value * customTip) / textPeople.value
-    textCustom.value = "";
+})
+
+textCustom.addEventListener("keypress", (e) =>{
+  let customTip = textCustom.value / 100
+  console.log(customTip);
+  if(e.code === "Enter"){
+    if(customTip > 0) {
+        totalBill = textBill.value * customTip;
+        totalPeople = (textBill.value * customTip) / textPeople.value
+        textCustom.value = "";
+      }
   }
 })
 
