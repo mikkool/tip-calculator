@@ -25,7 +25,6 @@ img {
   background-color: var(--white);
   border-radius: 30px;
   box-shadow: 0px 0px 10px var(--light-grayish-cyan);
-  
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 2rem;
@@ -143,4 +142,19 @@ img {
 .text-grid .error-bill, .text-grid .error-people {
   text-align: right;
   color: var(--error-text);
+}
+
+@media only screen and (max-width: 375px){
+  .calc-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    background-color: red;
+  }
+  
 }
