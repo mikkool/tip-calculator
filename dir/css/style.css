@@ -1,6 +1,5 @@
 @import url('variables.css');
 @import url('global.css');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 body {
   background: var(--lighter-grayish-cyan);
@@ -31,6 +30,15 @@ img {
   grid-template-columns: repeat(2, 1fr);
   padding: 2rem;
   gap: 2rem;
+}
+
+.btn-tip {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn-tip:hover {
+  background-color: var(--strong-cyan);
 }
 
 .btn-tip-grid {
@@ -89,10 +97,40 @@ img {
   background-color: var(--strong-cyan);
   width: 100%;
   color: var(--very-dark-cyan);
-  font-weight: 400;
+  font-weight: 800;
 }
 
 .custom {
   background-color: var(--light-grayish-cyan);
   color: var(--darker-grayish-cyan);
+}
+
+.input-icon {
+  position: inherit;
+}
+
+.dollar-icon {
+  position: absolute;
+  top: 90px;
+  left: 50px
+}
+
+.person-icon {
+  position: absolute;
+  top: 290px;
+  left: 50px;
+}
+
+#txt-bill:focus {
+  outline: none !important;
+  border: 1px solid var(--strong-cyan);
+}
+
+.txt-custom {
+  display: none;
+}
+
+.txt-custom:focus {
+  outline: none !important;
+  border: 1px solid var(--strong-cyan);
 }
