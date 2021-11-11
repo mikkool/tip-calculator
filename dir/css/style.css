@@ -15,7 +15,7 @@ img {
 
 .calculator {
   width: 675px;
-  top: 50%;
+  top: 60%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
